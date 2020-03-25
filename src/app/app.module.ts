@@ -6,23 +6,31 @@ import { AppComponent } from './app.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import {FormsModule} from '@angular/forms';
 import {CourseServiceClient} from './services/CourseServiceCLient';
+import {ModuleServiceClient} from './services/ModuleServiceClient';
 import { CourseViewerComponentComponent } from './course-viewer-component/course-viewer-component.component';
 import { ModuleListComponentComponent } from './module-list-component/module-list-component.component';
+import { LessonTabsComponentComponent } from './lesson-tabs-component/lesson-tabs-component.component';
+import {LessonServiceClient} from './services/LessonServiceClient';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseListComponent,
     CourseViewerComponentComponent,
-    ModuleListComponentComponent
+    ModuleListComponentComponent,
+    LessonTabsComponentComponent,
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        RouterModule
     ],
   providers: [
-    CourseServiceClient
+    CourseServiceClient,
+    ModuleServiceClient,
+    LessonServiceClient
   ],
   bootstrap: [AppComponent]
 })

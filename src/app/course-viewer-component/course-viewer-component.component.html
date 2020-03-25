@@ -1,0 +1,23 @@
+<div class="navbar bg-primary">
+  <div class="navbar-brand">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <a routerLink="/table/courses"><i class="fa fa-times fa-2x module-cancel" aria-hidden="true"></i></a>
+      <div class="col-sm-1 lg-1 md-1"></div>
+      <h2>{{course.courseName}}</h2>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+  <div class="col-sm-12 col-lg-4 col-md-12">
+    <h3>Module List</h3>
+    <app-module-list-component></app-module-list-component>
+  </div>
+  <div class="col-sm-12 col-lg-8 col-md-12">
+    <app-lesson-tabs-component></app-lesson-tabs-component>
+  </div>
+  </div>
+</div>
+

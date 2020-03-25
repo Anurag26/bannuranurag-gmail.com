@@ -1,0 +1,16 @@
+<div class="navbar bg-primary">
+  <div class="navbar-brand">
+    <h3>Courses Enrolled</h3>
+  </div>
+</div>
+<br>
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item"
+      *ngFor="let course of courses"><a routerLink="/table/courses/{{course._id}}/modules">{{course.courseName}}</a>
+    </li>
+  </ul>
+</div>
+
+
+
