@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-sm-4"><h5>{{question.question}}</h5></div>
+  <div class="col-sm-8">
+    <i [hidden]="!(grading && answer!==question.correct)"  class="fa fa-times fa-2x wrong-ans-icon" style="float: right" aria-hidden="true"></i>
+    <i [hidden]="!(grading && answer===question.correct)" class="fa fa-check fa-2x correct-ans-icon" style="float: right" aria-hidden="true"></i>
+  </div>
+</div>
+
+<li *ngFor="let choice of question.choices" class="list-group-item" [class]="{'list-group-item-danger':grading&&choice!==question.correct&&selected===choice, 'list-group-item-success':grading&&choice===question.correct}">
+<label><input type="radio" [(ngModel)]="answer" (click)="grade(false,answer)" name="{{question._id}}" value="{{choice}}"> {{choice}}</label>
+</li>
+<p>Your answer: {{answer}}</p>
+<button type="button" class="btn btn-success" (click)="grade(true,answer)">Grade</button>
+
